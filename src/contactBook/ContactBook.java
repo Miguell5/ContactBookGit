@@ -107,5 +107,18 @@ public class ContactBook {
     public Contact next() {
         return contacts[currentContact++];
     }
+    private int searchIndexPhone(int phone) {
+        int i = 0;
+        int result = -1;
+        boolean found = false;
+        while (i<counter && !found)
+            if (contacts[i].getPhone() == phone)
+                found = true;
+            else
+                i++;
+        if (found && result == -1) result = i;
+        return result;
+    }
+    public String getNameByPhone(int phone) {return contacts[searchIndexPhone(phone)].getName();}
 
 }
