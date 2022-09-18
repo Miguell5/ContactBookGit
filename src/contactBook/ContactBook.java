@@ -119,6 +119,10 @@ public class ContactBook {
         if (found && result == -1) result = i;
         return result;
     }
-    public String getNameByPhone(int phone) {return contacts[searchIndexPhone(phone)].getName();}
+    public String getNameByPhone(int phone) {
+        int i = searchIndexPhone(phone);
+        if(i == -1) {return null;}
+        return contacts[i].getName();
+    }
 
 }
