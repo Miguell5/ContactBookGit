@@ -61,7 +61,7 @@ public class Main {
                     getNameByPhone(in, cBook);
                     break;
                 case SAME_PHONE:
-                    checkEqualPhones(in,cBook);
+                    checkEqualPhones(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -167,8 +167,12 @@ public class Main {
             System.out.println(name);
     }
 
-    private static void checkEqualPhones(Scanner in, ContactBook cBook) {
-
+    private static void checkEqualPhones(ContactBook cBook) {
+        int result = cBook.areContactWithSameNumber();
+        if (result == 1)
+            System.out.println();
+        else
+            System.out.println();
     }
 
 
