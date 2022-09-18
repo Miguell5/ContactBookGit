@@ -26,6 +26,7 @@ public class Main {
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
     public static final String NO_MATCH = "Phone number does not exist.";
     public static final String ALL_DIFFERENT = "All contacts have different phone numbers.";
+    public static final String DUPLICATE_PHONES = "There are contacts that share phone numbers.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
 
@@ -170,9 +171,9 @@ public class Main {
     private static void checkEqualPhones(ContactBook cBook) {
         int result = cBook.areContactWithSameNumber();
         if (result == 1)
-            System.out.println();
+            System.out.println(DUPLICATE_PHONES);
         else
-            System.out.println();
+            System.out.println(ALL_DIFFERENT);
     }
 
 
