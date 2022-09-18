@@ -60,6 +60,9 @@ public class Main {
                 case GET_NAME_BY_PHONE:
                     getNameByPhone(in, cBook);
                     break;
+                case SAME_PHONE:
+                    checkEqualPhones(in,cBook);
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -161,6 +164,13 @@ public class Main {
         if (name == null)
             System.out.println(NO_MATCH);
         else
-            System.out.println();
+            System.out.println(name);
     }
+
+    private static void checkEqualPhones(Scanner in, ContactBook cBook) {
+
+    }
+
+
+
 }

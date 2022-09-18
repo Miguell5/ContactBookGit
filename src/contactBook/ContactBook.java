@@ -60,6 +60,21 @@ public class ContactBook {
         contacts[searchIndex(name)].setEmail(email);
     }
 
+    public String areContactWithSameNumber(){
+        if(counter==0 || counter==1)
+            return "All contacts have different phone numbers";
+        int x,y;
+        for(int i=0;i<counter;i++){
+            x=contacts[i].getPhone();
+            for(int j=i+1;j<counter;j++){
+                y=contacts[j].getPhone();
+                if(x==y)
+                    return "There are contacts that share phone numbers.";
+            }
+        }
+        return "All contacts have different phone numbers";
+    }
+
     private int searchIndex(String name) {
         int i = 0;
         int result = -1;
@@ -101,7 +116,7 @@ public class ContactBook {
                 found = true;
             else
                 i++;
-        if (found) result = i;
+        if (found && result == -1) result = i;
         return result;
     }
     public String getNameByPhone(int phone) {return contacts[searchIndexPhone(phone)].getName();}
