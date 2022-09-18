@@ -161,6 +161,7 @@ public class Main {
 
     private static void getNameByPhone(Scanner in, ContactBook cBook) {
         int phone = in.nextInt();
+        in.nextLine();
         String name = cBook.getNameByPhone(phone);
         if (name == null)
             System.out.println(NO_MATCH);
